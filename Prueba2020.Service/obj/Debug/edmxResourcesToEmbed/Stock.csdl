@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Prueba2020Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Inventario">
+    <Key>
+      <PropertyRef Name="CodigoProducto" />
+    </Key>
+    <Property Name="CodigoProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Descripcion" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Tipo" Type="Int32" />
+    <Property Name="Stock" Type="Int32" />
+    <NavigationProperty Name="Tipo1" Relationship="Prueba2020Model.FK_Inventario_Tipo" FromRole="Inventario" ToRole="Tipo" />
+  </EntityType>
+  <EntityType Name="Tipo">
+    <Key>
+      <PropertyRef Name="CodigoTipo" />
+    </Key>
+    <Property Name="CodigoTipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Inventario" Relationship="Prueba2020Model.FK_Inventario_Tipo" FromRole="Tipo" ToRole="Inventario" />
+  </EntityType>
+  <EntityContainer Name="Prueba2020Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Inventario" EntityType="Self.Inventario" />
+    <EntitySet Name="Tipo" EntityType="Self.Tipo" />
+    <AssociationSet Name="FK_Inventario_Tipo" Association="Prueba2020Model.FK_Inventario_Tipo">
+      <End Role="Tipo" EntitySet="Tipo" />
+      <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_Inventario_Tipo">
+    <End Type="Prueba2020Model.Tipo" Role="Tipo" Multiplicity="0..1" />
+    <End Type="Prueba2020Model.Inventario" Role="Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo">
+        <PropertyRef Name="CodigoTipo" />
+      </Principal>
+      <Dependent Role="Inventario">
+        <PropertyRef Name="Tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
