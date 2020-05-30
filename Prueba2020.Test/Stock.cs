@@ -25,6 +25,7 @@ namespace Prueba2020.Test
             int returnTest = _iStock.prueba1(n1, n2);
             //assert
             Assert.IsNotNull(returnTest);
+            Assert.AreEqual(returnTest,4);
         }
         [TestMethod]
         public void prueba2()

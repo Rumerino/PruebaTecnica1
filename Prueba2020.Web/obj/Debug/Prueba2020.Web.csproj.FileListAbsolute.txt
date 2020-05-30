@@ -115,7 +115,6 @@ D:\PruebaTecnica1\Prueba2020.Web\bin\LightInject.pdb
 D:\PruebaTecnica1\Prueba2020.Web\bin\LightInject.xml
 D:\PruebaTecnica1\Prueba2020.Web\bin\System.ValueTuple.xml
 D:\PruebaTecnica1\Prueba2020.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\PruebaTecnica1\Prueba2020.Web\obj\Debug\Prueba2020.Web.csprojAssemblyReference.cache
 D:\PruebaTecnica1\Prueba2020.Web\obj\Debug\Prueba2020.Web.csproj.CoreCompileInputs.cache
 D:\PruebaTecnica1\Prueba2020.Web\obj\Debug\Prueba2020.Web.csproj.CopyComplete
 D:\PruebaTecnica1\Prueba2020.Web\obj\Debug\Prueba2020.Web.dll

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-
+using Service = Prueba2020.Service.Composer;
 namespace Prueba2020
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -16,6 +16,7 @@ namespace Prueba2020
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Service.Composer.DependencyResolver.Initialize(new LightInject.ServiceContainer());
         }
     }
 }
