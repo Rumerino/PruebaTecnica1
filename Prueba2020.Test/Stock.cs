@@ -33,7 +33,6 @@ namespace Prueba2020.Test
             //arrange
             int n1 = 1;
             int n2 = 1;
-
             //act
             _iStock.prueba2(n1, n2);
         }

@@ -9,7 +9,7 @@
     <Property Name="Descripcion" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
     <Property Name="Tipo" Type="Int32" />
     <Property Name="Stock" Type="Int32" />
-    <NavigationProperty Name="Tipo1" Relationship="Prueba2020Model.FK_Inventario_Tipo" FromRole="Inventario" ToRole="Tipo" />
+    <NavigationProperty Name="Tipo1" Relationship="Self.FK_Inventario_Tipo" FromRole="Inventario" ToRole="Tipo" />
   </EntityType>
   <EntityType Name="Tipo">
     <Key>
@@ -17,19 +17,11 @@
     </Key>
     <Property Name="CodigoTipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <NavigationProperty Name="Inventario" Relationship="Prueba2020Model.FK_Inventario_Tipo" FromRole="Tipo" ToRole="Inventario" />
+    <NavigationProperty Name="Inventario" Relationship="Self.FK_Inventario_Tipo" FromRole="Tipo" ToRole="Inventario" />
   </EntityType>
-  <EntityContainer Name="Prueba2020Entities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Inventario" EntityType="Self.Inventario" />
-    <EntitySet Name="Tipo" EntityType="Self.Tipo" />
-    <AssociationSet Name="FK_Inventario_Tipo" Association="Prueba2020Model.FK_Inventario_Tipo">
-      <End Role="Tipo" EntitySet="Tipo" />
-      <End Role="Inventario" EntitySet="Inventario" />
-    </AssociationSet>
-  </EntityContainer>
   <Association Name="FK_Inventario_Tipo">
-    <End Type="Prueba2020Model.Tipo" Role="Tipo" Multiplicity="0..1" />
-    <End Type="Prueba2020Model.Inventario" Role="Inventario" Multiplicity="*" />
+    <End Role="Tipo" Type="Self.Tipo" Multiplicity="0..1" />
+    <End Role="Inventario" Type="Self.Inventario" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Tipo">
         <PropertyRef Name="CodigoTipo" />
@@ -39,4 +31,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityContainer Name="Prueba2020Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Inventario" EntityType="Self.Inventario" />
+    <EntitySet Name="Tipo" EntityType="Self.Tipo" />
+    <AssociationSet Name="FK_Inventario_Tipo" Association="Self.FK_Inventario_Tipo">
+      <End Role="Tipo" EntitySet="Tipo" />
+      <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
+  </EntityContainer>
 </Schema>

@@ -1,3 +1,6 @@
+using LightInject;
+using Prueba2020.Service.Interface;
+using Prueba2020.Service.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +19,9 @@ namespace Prueba2020
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            Service.Composer.DependencyResolver.Initialize(new LightInject.ServiceContainer());
+            var container = new ServiceContainer();
+            //register other services
+            container.Register<IStock, StockService>(new PerScopeLifetime());
         }
     }
 }

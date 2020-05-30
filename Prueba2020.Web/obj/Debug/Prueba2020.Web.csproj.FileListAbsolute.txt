@@ -119,3 +119,4 @@ D:\PruebaTecnica1\Prueba2020.Web\obj\Debug\Prueba2020.Web.csproj.CoreCompileInpu
 D:\PruebaTecnica1\Prueba2020.Web\obj\Debug\Prueba2020.Web.csproj.CopyComplete
 D:\PruebaTecnica1\Prueba2020.Web\obj\Debug\Prueba2020.Web.dll
 D:\PruebaTecnica1\Prueba2020.Web\obj\Debug\Prueba2020.Web.pdb
+D:\PruebaTecnica1\Prueba2020.Web\obj\Debug\Prueba2020.Web.csprojAssemblyReference.cache

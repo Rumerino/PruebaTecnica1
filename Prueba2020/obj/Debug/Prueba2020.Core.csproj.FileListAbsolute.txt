@@ -142,6 +142,7 @@ D:\PruebaTecnica1\Prueba2020\bin\roslyn\vbc.rsp
 D:\PruebaTecnica1\Prueba2020\bin\roslyn\VBCSCompiler.exe
 D:\PruebaTecnica1\Prueba2020\bin\roslyn\VBCSCompiler.exe.config
 D:\PruebaTecnica1\Prueba2020\bin\Antlr3.Runtime.dll
+D:\PruebaTecnica1\Prueba2020\bin\EntityFramework.dll
 D:\PruebaTecnica1\Prueba2020\bin\LightInject.dll
 D:\PruebaTecnica1\Prueba2020\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\PruebaTecnica1\Prueba2020\bin\Microsoft.Web.Infrastructure.dll
@@ -157,11 +158,11 @@ D:\PruebaTecnica1\Prueba2020\bin\System.Web.WebPages.Deployment.dll
 D:\PruebaTecnica1\Prueba2020\bin\System.Web.WebPages.dll
 D:\PruebaTecnica1\Prueba2020\bin\System.Web.WebPages.Razor.dll
 D:\PruebaTecnica1\Prueba2020\bin\WebGrease.dll
-D:\PruebaTecnica1\Prueba2020\bin\EntityFramework.dll
 D:\PruebaTecnica1\Prueba2020\bin\Prueba2020.Service.pdb
 D:\PruebaTecnica1\Prueba2020\bin\Prueba2020.Service.dll.config
 D:\PruebaTecnica1\Prueba2020\bin\Prueba2020.Web.pdb
 D:\PruebaTecnica1\Prueba2020\bin\Prueba2020.Web.dll.config
+D:\PruebaTecnica1\Prueba2020\bin\EntityFramework.xml
 D:\PruebaTecnica1\Prueba2020\bin\LightInject.pdb
 D:\PruebaTecnica1\Prueba2020\bin\LightInject.xml
 D:\PruebaTecnica1\Prueba2020\bin\System.ValueTuple.xml
@@ -175,7 +176,6 @@ D:\PruebaTecnica1\Prueba2020\bin\System.Web.WebPages.Razor.xml
 D:\PruebaTecnica1\Prueba2020\bin\Newtonsoft.Json.xml
 D:\PruebaTecnica1\Prueba2020\bin\Antlr3.Runtime.pdb
 D:\PruebaTecnica1\Prueba2020\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\PruebaTecnica1\Prueba2020\bin\EntityFramework.xml
 D:\PruebaTecnica1\Prueba2020\bin\es\System.Web.Helpers.resources.dll
 D:\PruebaTecnica1\Prueba2020\bin\es\System.Web.Mvc.resources.dll
 D:\PruebaTecnica1\Prueba2020\bin\es\System.Web.Optimization.resources.dll
@@ -188,3 +188,5 @@ D:\PruebaTecnica1\Prueba2020\obj\Debug\Prueba2020.Core.csproj.CoreCompileInputs.
 D:\PruebaTecnica1\Prueba2020\obj\Debug\Prueba2020.Core.csproj.CopyComplete
 D:\PruebaTecnica1\Prueba2020\obj\Debug\Prueba2020.dll
 D:\PruebaTecnica1\Prueba2020\obj\Debug\Prueba2020.pdb
+D:\PruebaTecnica1\Prueba2020\bin\EntityFramework.SqlServer.dll
+D:\PruebaTecnica1\Prueba2020\bin\EntityFramework.SqlServer.xml

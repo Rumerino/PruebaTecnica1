@@ -18,6 +18,10 @@ namespace Prueba2020
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            RouteTable.Routes.MapRoute(
+                name: "eCommerceCategoryView",
+                url:"stock/GetCategoria/{id}",
+                new { controller = "Stock", action = "Index", category_name = UrlParameter.Optional });
         }
     }
 }
