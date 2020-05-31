@@ -12,7 +12,6 @@ namespace Prueba2020.Service.Composer
         public static void Initialize(LightInject.ServiceContainer container)
         {
             //Stock
-            container.Register<IStock, StockService>();
         }
     }
 }

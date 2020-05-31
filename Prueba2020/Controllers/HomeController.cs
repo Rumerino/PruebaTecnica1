@@ -1,5 +1,4 @@
 ﻿using Prueba2020.Service.Interface;
-using Prueba2020.Service.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,17 +9,8 @@ namespace Prueba2020.Controllers
 {
     public class HomeController : Controller
     {
-        /*private readonly IStock _iStock;
-        public HomeController(IStock _istock)
-        {
-            _iStock = _istock;
-        }*/
         public ActionResult Index()
         {
-            //_iStock.prueba1(2,2);
-
-            StockService ss = new StockService();
-            var prueba = ss.GetAll();
             return View();
         }
 

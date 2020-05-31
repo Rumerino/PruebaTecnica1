@@ -20,8 +20,8 @@ namespace Prueba2020
             );
             RouteTable.Routes.MapRoute(
                 name: "eCommerceCategoryView",
-                url:"stock/GetCategoria/{id}",
-                new { controller = "Stock", action = "Index", category_name = UrlParameter.Optional });
+                url: "stock/add/{nombre}/{descripcion}/{tipo}/{stock}",
+                new { controller = "Stock", action = "Add"});
         }
     }
 }

@@ -13,11 +13,11 @@ namespace Prueba2020.Controllers
     public class StockController : Controller
     {
         // GET: Stock
-        public JsonResult GetAll()
+        public JsonResult DetailsAll()
         {
             StockService ss = new StockService();
 
-            List<Inventario> inventario = ss.GetAll();
+            List<Inventario> inventario = ss.DetailsAll();
 
             JsonResponse response = new JsonResponse();
             if (inventario == null)
@@ -33,13 +33,20 @@ namespace Prueba2020.Controllers
             return Json(response, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult Get(int codigoProducto)
+        public JsonResult DetailsById(int codigoProducto)
         {
+            JsonResponse response = new JsonResponse();
+            if (codigoProducto==null)
+            {
+                response.code = JsonResponse.ERROR;
+                response.value = null;
+
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
             StockService ss = new StockService();
 
-            Inventario inventario = ss.Get(codigoProducto);
+            Inventario inventario = ss.Details(codigoProducto);
 
-            JsonResponse response = new JsonResponse();
             if (inventario == null)
             {
                 response.code = JsonResponse.ERROR;
@@ -52,76 +59,83 @@ namespace Prueba2020.Controllers
             }
             return Json(response, JsonRequestBehavior.AllowGet);
         }
-        // GET: Stock/Details/5
-        public ActionResult Details(int id)
+        public JsonResult Details(string nombre)
         {
-            return View();
+            JsonResponse response = new JsonResponse();
+            if (string.IsNullOrEmpty(nombre))
+            {
+                response.code = JsonResponse.ERROR;
+                response.value = null;
+
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
+            StockService ss = new StockService();
+
+            Inventario inventario = ss.Details(nombre);
+
+            if (inventario == null)
+            {
+                response.code = JsonResponse.ERROR;
+                response.value = null;
+            }
+            else
+            {
+                response.code = JsonResponse.OK;
+                response.value = inventario;
+            }
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
 
-        // GET: Stock/Create
-        public ActionResult Create()
+        public JsonResult get(string nombre)
         {
-            return View();
+            StockService ss = new StockService();
+
+            JsonResponse response = new JsonResponse();
+            if (string.IsNullOrEmpty(nombre))
+            {
+                response.code = JsonResponse.ERROR;
+                response.value = 0;
+
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
+
+            int code = ss.Get(nombre);
+
+            if (code == 0)
+            {
+                response.code = JsonResponse.ERROR;
+            }
+            else
+            {
+                response.code = JsonResponse.OK;
+            }
+
+            response.value = code;
+
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
 
-        // POST: Stock/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public JsonResult Add(string nombre,string descripcion,string tipo, string stock)
         {
-            try
+            JsonResponse response = new JsonResponse();
+
+            if (string.IsNullOrEmpty(nombre)|| string.IsNullOrEmpty(descripcion) || string.IsNullOrEmpty(tipo) || string.IsNullOrEmpty(stock))
             {
-                // TODO: Add insert logic here
+                response.code = JsonResponse.ERROR;
+                response.value = 0;
 
-                return RedirectToAction("Index");
+                return Json(response, JsonRequestBehavior.AllowGet);
             }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: Stock/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
+            StockService ss = new StockService();
 
-        // POST: Stock/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
+            int code = ss.Add(nombre,descripcion,tipo,stock);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+       
 
-        // GET: Stock/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+            response.value = code;
 
-        // POST: Stock/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
     }
 }

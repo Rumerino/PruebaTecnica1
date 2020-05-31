@@ -21,7 +21,6 @@ namespace Prueba2020
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             var container = new ServiceContainer();
             //register other services
-            container.Register<IStock, StockService>(new PerScopeLifetime());
         }
     }
 }
